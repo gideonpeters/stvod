@@ -1,7 +1,7 @@
 import Vue from "vue";
 import App from "./App.vue";
 import router from "./router/router";
-import "./assets/styles/main.css";
+import "./assets/styles/main.scss";
 import "@mdi/font/css/materialdesignicons.css";
 
 Vue.config.productionTip = false;
