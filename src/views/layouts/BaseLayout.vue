@@ -1,50 +1,42 @@
 <template>
 	<div class="home flex h-screen">
+		<div :class="bg" />
 		<div class="bg-darken" />
 		<div class="main-body">
-			<div class="flex flex-row-reverse absolute right-0 mr-16">
-				<div
-					class="text-white text-xl px-10 py-6 uppercase cursor-pointer"
-					v-for="(route, ix) in routes"
-					:key="ix"
-				>{{route.title}}</div>
+			<div class="absolute right-0 mr-16">
+				<nav-bar />
 			</div>
 
 			<div class="flex flex-col justify-center h-full">
 				<div>
 					<router-view />
 				</div>
+				<terms-button />
 			</div>
 		</div>
 	</div>
 </template>
 
 <script>
+import TermsButton from "./../components/TermsButton";
+import NavBar from "./../components/NavBar";
+
 export default {
-	data: () => ({
-		routes: [
-			{
-				title: "Sign up",
-				name: "main.sign-up"
-			},
-			{
-				title: "Login",
-				name: "main.login"
-			},
-			{
-				title: "TV Shows",
-				name: "main.tv-shows"
-			},
-			{
-				title: "Movies",
-				name: "main.movies"
-			},
-			{
-				title: "Home",
-				name: "main.home"
+	components: {
+		NavBar,
+		TermsButton
+	},
+	computed: {
+		bg() {
+			let res;
+			if (this.$route.name === "main.home") {
+				res = "bg-darken";
+			} else {
+				res = "bg-darken-deep";
 			}
-		]
-	})
+			return res;
+		}
+	}
 };
 </script>
 
@@ -67,6 +59,15 @@ export default {
 		width: 100vw;
 		position: absolute;
 		z-index: 2;
+		&-deep {
+			@extend .bg-darken;
+			background: linear-gradient(
+				270deg,
+				#333333 39.72%,
+				rgba(51, 51, 51, 0) 83.09%
+			);
+			opacity: 1;
+		}
 	}
 
 	.main-body {

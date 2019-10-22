@@ -7,7 +7,7 @@ export default new VueRouter({
 	mode: "history",
 	routes: [
 		{
-			path: "",
+			path: "/",
 			component: () => import("./../views/layouts/BaseLayout"),
 			children: [
 				{
@@ -21,8 +21,8 @@ export default new VueRouter({
 					component: () => import("./../views/sections/Movies")
 				},
 				{
-					path: "log",
-					name: "main.log",
+					path: "login",
+					name: "main.login",
 					component: () => import("./../views/sections/Log")
 				}
 			]

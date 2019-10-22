@@ -6,18 +6,11 @@
 		<div class="px-64 mt-5">
 			<input type="text" placeholder="Search" class="movie-search text-2xl" />
 		</div>
-		<terms-button />
 	</div>
 </template>
 
 <script>
-import TermsButton from "./../components/TermsButton";
-
-export default {
-	components: {
-		TermsButton
-	}
-};
+export default {};
 </script>
 
 <style lang="scss" scoped>
