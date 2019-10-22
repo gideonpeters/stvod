@@ -8,8 +8,24 @@ export default new VueRouter({
 	routes: [
 		{
 			path: "",
-			name: "main.home",
-			component: () => import("./../views/pages/Home")
+			component: () => import("./../views/layouts/BaseLayout"),
+			children: [
+				{
+					path: "",
+					name: "main.home",
+					component: () => import("./../views/sections/Home")
+				},
+				{
+					path: "movies",
+					name: "main.movies",
+					component: () => import("./../views/sections/Movies")
+				},
+				{
+					path: "log",
+					name: "main.log",
+					component: () => import("./../views/sections/Log")
+				}
+			]
 		}
 	]
 });
