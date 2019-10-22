@@ -44,7 +44,7 @@ export default {
 
 <style lang="scss" scoped>
 .home {
-  background-image: url("./../assets/images/bg.png");
+  background-image: url("./../../assets/images/bg.png");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;

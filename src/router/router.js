@@ -4,12 +4,12 @@ import VueRouter from "vue-router";
 Vue.use(VueRouter);
 
 export default new VueRouter({
-  mode: "history",
-  routes: [
-    {
-      path: "",
-      name: "main.home",
-      component: () => import("./../components/Home")
-    }
-  ]
+	mode: "history",
+	routes: [
+		{
+			path: "",
+			name: "main.home",
+			component: () => import("./../views/pages/Home")
+		}
+	]
 });
